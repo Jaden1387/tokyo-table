@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Tokyo Table | Japanese Gourmet</title>
 
+<!-- Google Font for luxury look -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
@@ -14,15 +15,14 @@ body {
   color: #eee;
 }
 
-/* HEADER */
 header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 20px;
   background: linear-gradient(to bottom, #000, #111);
 }
 
 header img {
-  width: 180px;
+  width: 160px;
   margin-bottom: 20px;
 }
 
@@ -30,6 +30,7 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3em;
   margin: 0;
+  letter-spacing: 2px;
 }
 
 header p {
@@ -45,15 +46,16 @@ nav {
 
 nav a {
   color: #eee;
-  margin: 0 15px;
   text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.9em;
   letter-spacing: 2px;
 }
 
 .order-btn {
   display: inline-block;
   margin-top: 30px;
-  padding: 14px 40px;
+  padding: 14px 36px;
   border: 1px solid #c9a24d;
   color: #c9a24d;
   text-decoration: none;
@@ -62,28 +64,28 @@ nav a {
 }
 
 .order-btn:hover {
-  background: #c9a24d;
+  background-color: #c9a24d;
   color: #000;
 }
 
-/* SECTIONS */
 section {
   max-width: 900px;
-  margin: 70px auto;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
+  font-size: 2em;
   border-bottom: 1px solid #333;
   padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-/* MENU */
 .menu-item {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 10px 0;
   border-bottom: 1px dotted #333;
 }
 
@@ -91,42 +93,27 @@ h2 {
   color: #c9a24d;
 }
 
-/* GALLERY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  gap: 20px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border-radius: 12px;
 }
 
-/* CONTACT */
 .contact p {
   line-height: 1.8;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
   background: #000;
+  font-size: 0.8em;
   color: #777;
-}
-
-/* SCROLL ANIMATIONS */
-.fade-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
-}
-
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 </style>
 </head>
@@ -134,49 +121,63 @@ footer {
 <body>
 
 <header>
+  <!-- LOGO -->
   <img src="logo.png" alt="Tokyo Table Logo">
+
   <h1>Tokyo Table</h1>
   <p>Japanese Gourmet</p>
 
   <nav>
+    <a href="#about">About</a>
     <a href="#menu">Menu</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ORDER BUTTON -->
   <a href="#" class="order-btn">ORDER NOW</a>
 </header>
 
-<section id="menu" class="fade-section">
+<section id="about">
+  <h2>Our Philosophy</h2>
+  <p>
+    Tokyo Table blends modern Japanese cuisine with refined elegance.
+    Every dish is crafted with precision, balance, and the highest quality
+    ingredients to create a Michelin-inspired dining experience.
+  </p>
+</section>
+
+<section id="menu">
   <h2>Menu</h2>
 
   <div class="menu-item"><span>Edamame</span><span>$6</span></div>
   <div class="menu-item"><span>Gyoza Dumplings</span><span>$9</span></div>
   <div class="menu-item"><span>Chili Chicken</span><span>$14</span></div>
+
   <div class="menu-item"><span>Wagyu Steak</span><span>$48</span></div>
   <div class="menu-item"><span>Tokyo Ramen</span><span>$18</span></div>
   <div class="menu-item"><span>Spicy Miso Ramen</span><span>$19</span></div>
   <div class="menu-item"><span>Teriyaki Chicken Bowl</span><span>$17</span></div>
-  <div class="menu-item"><span>Salmon Sushi Plate</span><span>$20</span></div>
+  <div class="menu-item"><span>Salmon Sushi Plate (8 pcs)</span><span>$20</span></div>
 </section>
 
-<section id="gallery" class="fade-section">
+<section id="gallery">
   <h2>Signature Dishes</h2>
   <div class="gallery">
     <img src="ramen.jpg" alt="Ramen">
-    <img src="wagyu.jpg" alt="Wagyu Steak">
+    <img src="wagyu.jpg" alt="Wagyu">
     <img src="sushi.jpg" alt="Sushi">
     <img src="teriyaki.jpg" alt="Teriyaki Chicken">
   </div>
 </section>
 
-<section id="contact" class="fade-section contact">
+<section id="contact" class="contact">
   <h2>Contact</h2>
   <p>
     123 Tokyo Street, Toronto, ON<br>
     Phone: (416) 555-1234<br>
     Email: info@tokyotable.com<br>
-    Hours: Mon–Sun | 11AM – 10PM
+    Hours: Mon–Sun | 11:00 AM – 10:00 PM
   </p>
 </section>
 
@@ -184,22 +185,7 @@ footer {
   © 2026 Tokyo Table — Japanese Gourmet
 </footer>
 
-<!-- SCROLL SCRIPT -->
-<script>
-const sections = document.querySelectorAll('.fade-section');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.2 });
-
-sections.forEach(section => {
-  observer.observe(section);
-});
-</script>
-
 </body>
 </html>
+
+
