@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Tokyo Table | Japanese Gourmet</title>
 
-<!-- Google Font for luxury look -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
@@ -17,12 +16,12 @@ body {
 
 header {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
   background: linear-gradient(to bottom, #000, #111);
 }
 
 header img {
-  width: 160px;
+  width: 180px;
   margin-bottom: 20px;
 }
 
@@ -30,7 +29,6 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3em;
   margin: 0;
-  letter-spacing: 2px;
 }
 
 header p {
@@ -46,46 +44,51 @@ nav {
 
 nav a {
   color: #eee;
-  text-decoration: none;
   margin: 0 15px;
-  font-size: 0.9em;
+  text-decoration: none;
   letter-spacing: 2px;
+}
+
+.lang-btn {
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: none;
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+  cursor: pointer;
 }
 
 .order-btn {
   display: inline-block;
   margin-top: 30px;
-  padding: 14px 36px;
+  padding: 14px 40px;
   border: 1px solid #c9a24d;
   color: #c9a24d;
   text-decoration: none;
   letter-spacing: 3px;
-  transition: 0.3s;
 }
 
 .order-btn:hover {
-  background-color: #c9a24d;
+  background: #c9a24d;
   color: #000;
 }
 
 section {
   max-width: 900px;
-  margin: 60px auto;
+  margin: 70px auto;
   padding: 0 20px;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2em;
   border-bottom: 1px solid #333;
   padding-bottom: 10px;
-  margin-bottom: 30px;
 }
 
 .menu-item {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px dotted #333;
 }
 
@@ -96,24 +99,31 @@ h2 {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 12px;
-}
-
-.contact p {
-  line-height: 1.8;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 footer {
   text-align: center;
   padding: 30px;
   background: #000;
-  font-size: 0.8em;
   color: #777;
+}
+
+/* Scroll animation */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -121,87 +131,103 @@ footer {
 <body>
 
 <header>
-  <!-- LOGO -->
   <img src="logo.png" alt="Tokyo Table Logo">
 
-  <h1>Tokyo Table</h1>
-  <p>Japanese Gourmet</p>
+  <h1 id="title">Tokyo Table</h1>
+  <p id="subtitle">Japanese Gourmet</p>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+    <a href="#menu" id="navMenu">Menu</a>
+    <a href="#gallery" id="navGallery">Gallery</a>
+    <a href="#contact" id="navContact">Contact</a>
   </nav>
 
-  <!-- ORDER BUTTON -->
-  <a href="#" class="order-btn">ORDER NOW</a>
+  <button class="lang-btn" onclick="toggleLanguage()">FR / EN</button><br>
+
+  <a href="#" class="order-btn" id="orderBtn">ORDER NOW</a>
 </header>
 
-<section id="about">
-  <h2>Our Philosophy</h2>
-  <p>
-    Tokyo Table blends modern Japanese cuisine with refined elegance.
-    Every dish is crafted with precision, balance, and the highest quality
-    ingredients to create a Michelin-inspired dining experience.
-  </p>
+<section id="menu" class="fade-section">
+  <h2 id="menuTitle">Menu</h2>
+
+  <div class="menu-item"><span id="i1">Edamame</span><span>$6</span></div>
+  <div class="menu-item"><span id="i2">Gyoza Dumplings</span><span>$9</span></div>
+  <div class="menu-item"><span id="i3">Chili Chicken</span><span>$14</span></div>
+  <div class="menu-item"><span id="i4">Wagyu Steak</span><span>$48</span></div>
+  <div class="menu-item"><span id="i5">Tokyo Ramen</span><span>$18</span></div>
+  <div class="menu-item"><span id="i6">Spicy Miso Ramen</span><span>$19</span></div>
+  <div class="menu-item"><span id="i7">Teriyaki Chicken Bowl</span><span>$17</span></div>
+  <div class="menu-item"><span id="i8">Salmon Sushi Plate</span><span>$20</span></div>
 </section>
 
-<section id="menu">
-  <h2>Menu</h2>
- 
-  <h2>Starters</h2>
-
-  <div class="menu-item"><span>Edamame-Steamed soybeans with sea salt</span><span>$6</span></div>
-  <div class="menu-item"><span>Gyoza Dumplings-Pan-fried pork dumplings with soy dipping sauce</span><span>$9</span></div>
-  <div class="menu-item"><span>Chili Chicken-Crispy chicken tossed in Japanese-style chili sauce</span><span>$14</span></div> 
-  <div class="menu-item"><span>Seaweed Salad-Fresh seaweed with sesame drassing </span><span>$6</span></div>
-
-  <h2>Main Dishes</h2>
-  
-  <div class="menu-item"><span>Wagyu Steak-Premium grilled Wagyu beef served with garlic butter and rice</span><span>$48</span></div>
-  <div class="menu-item"><span>Tokyo Ramen-Rich pork broth, noodles, soft-boiled egg,chashu pork</span><span>$18</span></div>
-  <div class="menu-item"><span>Spicy Miso Ramen-Miso broth with chilli oil, ground pork, corn, and noodles</span><span>$19</span></div>
-  <div class="menu-item"><span>Teriyaki Chicken Bowl-Grilled chicken glazed with teriyaki sauce over rice </span><span>$17</span></div>
-  <div class="menu-item"><span>Salmon Sushi Plate (8 pcs)- Fresh salmon nigiri and rolls</span><span>$20</span></div>
-  <div class="menu-item"><span>Vegetable Tempura-Lightly batterd seasonal vegetables</span><span>$15</span></div>
-  <div class="menu-item"><span>Beef Yakitori Skewers-Grilled beef skewers with tare sauce</span><span>$16</span></div>
-
-  <h2>Drinks</h2>
-
- <div class="menu-item"><span>Japanese Green Tea (Hot or Cold)</span><span>$4</span></div>  
- <div class="menu-item"><span>Ramune Soda-Classic Japanese marble soda</span><span>$5</span></div>  <div class="menu-item"><span>Japanese Green Tea (Hot or Cold)</span><span>$4</span></div>
-
-
-
-
-</section>
-
-<section id="gallery">
-  <h2>Signature Dishes</h2>
+<section id="gallery" class="fade-section">
+  <h2 id="galleryTitle">Signature Dishes</h2>
   <div class="gallery">
     <img src="ramen.jpg" alt="Ramen">
     <img src="wagyu.jpg" alt="Wagyu">
     <img src="sushi.jpg" alt="Sushi">
-    <img src="teriyaki.jpg" alt="Teriyaki Chicken">
+    <img src="teriyaki.jpg" alt="Teriyaki">
   </div>
 </section>
 
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>
+<section id="contact" class="fade-section">
+  <h2 id="contactTitle">Contact</h2>
+  <p id="contactText">
     123 Tokyo Street, Toronto, ON<br>
     Phone: (416) 555-1234<br>
     Email: info@tokyotable.com<br>
-    Hours: Mon–Sun | 11:00 AM – 10:00 PM
+    Hours: Mon–Sun | 11AM – 10PM
   </p>
 </section>
 
 <footer>
-  © 2026 Tokyo Table — Japanese Gourmet
+  © 2026 Tokyo Table
 </footer>
+
+<script>
+let isFrench = false;
+
+function toggleLanguage() {
+  isFrench = !isFrench;
+
+  document.getElementById("subtitle").innerText =
+    isFrench ? "Gastronomie Japonaise" : "Japanese Gourmet";
+  document.getElementById("navGallery").innerText =
+    isFrench ? "Galerie" : "Gallery";
+  document.getElementById("navContact").innerText =
+    isFrench ? "Contact" : "Contact";
+  document.getElementById("orderBtn").innerText =
+    isFrench ? "COMMANDER" : "ORDER NOW";
+  document.getElementById("menuTitle").innerText =
+    isFrench ? "Menu" : "Menu";
+  document.getElementById("galleryTitle").innerText =
+    isFrench ? "Plats Signature" : "Signature Dishes";
+  document.getElementById("contactTitle").innerText =
+    isFrench ? "Contact" : "Contact";
+
+  document.getElementById("i2").innerText =
+    isFrench ? "Raviolis Gyoza" : "Gyoza Dumplings";
+  document.getElementById("i3").innerText =
+    isFrench ? "Poulet Épicé" : "Chili Chicken";
+  document.getElementById("i4").innerText =
+    isFrench ? "Steak Wagyu" : "Wagyu Steak";
+  document.getElementById("i6").innerText =
+    isFrench ? "Ramen Miso Épicé" : "Spicy Miso Ramen";
+  document.getElementById("i7").innerText =
+    isFrench ? "Bol de Poulet Teriyaki" : "Teriyaki Chicken Bowl";
+  document.getElementById("i8").innerText =
+    isFrench ? "Plateau de Sushi au Saumon" : "Salmon Sushi Plate";
+}
+
+const sections = document.querySelectorAll('.fade-section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+});
+sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
-
 
