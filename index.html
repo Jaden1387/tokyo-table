@@ -1,1 +1,189 @@
-https://yourusername.github.io/tokyo-table/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tokyo Table | Japanese Gourmet</title>
+
+<!-- Google Font for luxury look -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0f0f0f;
+  color: #eee;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #000, #111);
+}
+
+header img {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+header p {
+  color: #c9a24d;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+}
+
+.order-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+  text-decoration: none;
+  letter-spacing: 3px;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background-color: #c9a24d;
+  color: #000;
+}
+
+section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dotted #333;
+}
+
+.menu-item span:last-child {
+  color: #c9a24d;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.contact p {
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+  font-size: 0.8em;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <!-- LOGO -->
+  <img src="logo.png" alt="Tokyo Table Logo">
+
+  <h1>Tokyo Table</h1>
+  <p>Japanese Gourmet</p>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ORDER BUTTON -->
+  <a href="#" class="order-btn">ORDER NOW</a>
+</header>
+
+<section id="about">
+  <h2>Our Philosophy</h2>
+  <p>
+    Tokyo Table blends modern Japanese cuisine with refined elegance.
+    Every dish is crafted with precision, balance, and the highest quality
+    ingredients to create a Michelin-inspired dining experience.
+  </p>
+</section>
+
+<section id="menu">
+  <h2>Menu</h2>
+
+  <div class="menu-item"><span>Edamame</span><span>$6</span></div>
+  <div class="menu-item"><span>Gyoza Dumplings</span><span>$9</span></div>
+  <div class="menu-item"><span>Chili Chicken</span><span>$14</span></div>
+
+  <div class="menu-item"><span>Wagyu Steak</span><span>$48</span></div>
+  <div class="menu-item"><span>Tokyo Ramen</span><span>$18</span></div>
+  <div class="menu-item"><span>Spicy Miso Ramen</span><span>$19</span></div>
+  <div class="menu-item"><span>Teriyaki Chicken Bowl</span><span>$17</span></div>
+  <div class="menu-item"><span>Salmon Sushi Plate (8 pcs)</span><span>$20</span></div>
+</section>
+
+<section id="gallery">
+  <h2>Signature Dishes</h2>
+  <div class="gallery">
+    <img src="ramen.jpg" alt="Ramen">
+    <img src="wagyu.jpg" alt="Wagyu">
+    <img src="sushi.jpg" alt="Sushi">
+    <img src="teriyaki.jpg" alt="Teriyaki Chicken">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>
+    123 Tokyo Street, Toronto, ON<br>
+    Phone: (416) 555-1234<br>
+    Email: info@tokyotable.com<br>
+    Hours: Mon–Sun | 11:00 AM – 10:00 PM
+  </p>
+</section>
+
+<footer>
+  © 2026 Tokyo Table — Japanese Gourmet
+</footer>
+
+</body>
+</html>
