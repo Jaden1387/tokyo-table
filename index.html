@@ -156,7 +156,11 @@ footer {
     Every dish is crafted with precision, balance, and the highest quality
     ingredients to create a Michelin-inspired dining experience.
   </p>
-</section>
+</section> <section id="menu" class="fade-section">
+<section id="gallery" class="fade-section">
+<section id="contact" class="fade-section">
+
+
 
 <section id="menu">
   <h2>Menu</h2>
@@ -195,6 +199,21 @@ footer {
 <footer>
   © 2026 Tokyo Table — Japanese Gourmet
 </footer>
+ <script>
+  const sections = document.querySelectorAll('.fade-section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
